@@ -1,0 +1,65 @@
+
+
+#navbar{
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(13, 13, 122);
+    color: white;
+}
+
+#forecast{
+    font-size: 20px;
+    display: flex;
+    background-color: aqua;
+    margin-top: 15px;
+    width: 175%;
+}
+
+#current{
+    border: 2px solid black;
+    width: 175%;
+}
+
+#citySearch{
+   justify-content: center; 
+   padding: 10px;
+   width: 415px;
+   margin-top: 15px;
+   display: flex;
+}
+
+#searchbar{
+    display: flex;
+}
+
+#card{
+    background-color: aqua;
+    color: black;
+    
+}
+
+#history{
+    color: gray;
+}
+
+.card-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#historyButton{
+    color: gray;
+    padding:5px;
+    margin-top: 15px;
+    display: flex;
+}
+
+.mainCard{
+    padding: 5px;
+}
+
+#forecastTitle{
+    margin-top: 20px;
+    font-size: 30px;
+}
