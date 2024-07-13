@@ -4,6 +4,9 @@
     text-align: center;
     justify-content: center;
     background-color: rgb(13, 13, 122);
+}
+
+.navbar-brand, .navbar-brand:hover, .navbar-brand:visited{
     color: white;
 }
 
@@ -17,15 +20,6 @@
 
 #current{
     border: 2px solid black;
-    width: 175%;
-}
-
-#citySearch{
-   justify-content: center; 
-   padding: 10px;
-   width: 415px;
-   margin-top: 15px;
-   display: flex;
 }
 
 #searchbar{
@@ -35,11 +29,11 @@
 #card{
     background-color: aqua;
     color: black;
-    
 }
 
 #history{
     color: gray;
+    margin-top: 20px;
 }
 
 .card-section{
@@ -48,18 +42,21 @@
     gap: 20px;
 }
 
-#historyButton{
-    color: gray;
-    padding:5px;
-    margin-top: 15px;
-    display: flex;
-}
+
 
 .mainCard{
     padding: 5px;
+    display: flexbox;
 }
 
 #forecastTitle{
     margin-top: 20px;
     font-size: 30px;
 }
+
+.form-label{
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 15px;
+}
+

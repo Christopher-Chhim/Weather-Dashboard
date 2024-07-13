@@ -20,13 +20,13 @@
             <div class="mb-3">
                 <label for="exampleFormControlInput1" id=searchbar class="form-label">Search for a City:</label>
                 <input type="text" class="form-control" id="cityName" placeholder="City name">
-                <button type="button" id="citySearch" class="btn btn-primary btn-lg">Search</button>
-                <button><section id="history" button type="button" id="historyButton">
-                </section></button>
+                <button type="button" id="citySearch" class="btn btn-primary btn-lg" style="margin-top: 25px; width: 45vh; ">Search</button>
+                <section id="history" class="d-grid gap-3">
+                </section>
               </div>
           </div>
           
-          <div class="col-6"><br>
+          <div class="col-8 d-none" id="contentCard"><br>
             <section id="current" class="mainCard">
               <h2 id="date"></h2>
               <p id="temperature"></p>
@@ -35,37 +35,49 @@
             </section>
 
             <h1 id="forecastTitle"><strong>5-Day Forecast:</strong></h1>
-            <section id="forecast" class="card-section">
-              <div class="card">
-                <h3 id ="date_0"></h3>
-                <p id="temperature_0"></p>
-                <p id="wind_0"></p>
-                <p id="humidity_0"></p>
+            <section id="forecast d-none" class="container">
+              <div class="row">
+                <div class="col card" style="margin: 10px; border-radius: 10%; 
+                border-color: black; background-color: teal; color:aquamarine;">
+                  <h3 id ="date_0"></h3>
+                  <p id="temperature_0"></p>
+                  <p id="wind_0"></p>
+                  <p id="humidity_0"></p>
+                </div>
+                
+                <div class="col card" style="margin: 10px; border-radius: 10%;
+                border-color: black; background-color: teal; color:aquamarine;">
+                  <h3 id ="date_1"></h3>
+                  <p id="temperature_1"></p>
+                  <p id="wind_1"></p>
+                  <p id="humidity_1"></p>
+                </div>
+
+                <div class="col card" style="margin: 10px; border-radius: 10%;
+                border-color: black; background-color: teal; color:aquamarine;">
+                  <h3 id ="date_2"></h3>
+                  <p id="temperature_2"></p>
+                  <p id="wind_2"></p>
+                  <p id="humidity_2"></p>
+                </div>
+
+                <div class="col card" style="margin: 10px; border-radius: 10%;
+                border-color: black; background-color: teal; color:aquamarine;">
+                  <h3 id ="date_3"></h3>
+                  <p id="temperature_3"></p>
+                  <p id="wind_3"></p>
+                  <p id="humidity_3"></p>
+                </div>
+              
+                <div class="col card" style="margin: 10px; border-radius: 10%;
+                border-color: black; background-color: teal; color:aquamarine;">
+                  <h3 id ="date_4"></h3>
+                  <p id="temperature_4"></p>
+                  <p id="wind_4"></p>
+                  <p id="humidity_4"></p>
+                </div>
               </div>
-              <div class="card">
-                <h3 id ="date_1"></h3>
-                <p id="temperature_1"></p>
-                <p id="wind_1"></p>
-                <p id="humidity_1"></p>
-              </div>
-              <div class="card">
-                <h3 id ="date_2"></h3>
-                <p id="temperature_2"></p>
-                <p id="wind_2"></p>
-                <p id="humidity_2"></p>
-              </div>
-              <div class="card">
-                <h3 id ="date_3"></h3>
-                <p id="temperature_3"></p>
-                <p id="wind_3"></p>
-                <p id="humidity_3"></p>
-              </div>
-              <div class="card">
-                <h3 id ="date_4"></h3>
-                <p id="temperature_4"></p>
-                <p id="wind_4"></p>
-                <p id="humidity_4"></p>
-              </div>
+            </div>
             </section>
           </div>
         </div>

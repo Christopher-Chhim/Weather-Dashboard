@@ -82,7 +82,7 @@ function getWeather(lat, lon){
         humidity_0.textContent = "Humidity: " +data.list[7].main.humidity + " %";
         date_0.textContent = dayjs().add(1, "days").format('MM/DD/YYYY')
 
-        temperature_1.textContent = "Temp: " + data.list[14].main.temp; + " °F";
+        temperature_1.textContent = "Temp: " + data.list[14].main.temp + " °F";
         wind_1.textContent = "Wind speed: " + data.list[14].wind.speed + " MPH";
         humidity_1.textContent = "Humidity: " +data.list[14].main.humidity + " %";
         date_1.textContent = dayjs().add(2, "days").format('MM/DD/YYYY')
@@ -101,6 +101,9 @@ function getWeather(lat, lon){
         wind_4.textContent = "Wind speed: " +  data.list[35].wind.speed + " MPH";
         humidity_4.textContent = "Humidity: " +data.list[35].main.humidity + " %";
         date_4.textContent = dayjs().add(5, "days").format('MM/DD/YYYY')
+    })
+    .then(()=>{
+        document.getElementById("contentCard").classList.remove("d-none");
     })
 }
 
@@ -122,7 +125,11 @@ fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey
 
 citySearch.addEventListener(`click`, function(){
     let cityName= document.getElementById(`cityName`).value;
-    geoLocation(cityName)
+    if (!isValidCityName(cityName)){
+        window.alert("Please enter a valid city name")
+        return;
+    }
+    geoLocation(cityName);
     let cityArray = getHistory();
     cityArray.push(cityName)
     saveHistory(cityArray);
@@ -140,16 +147,31 @@ function renderHistoryBtn(){
             geoLocation(event.target.textContent);
         }
         sectionHistory.appendChild(buttonTag);
+        buttonTag.classList.add("btn","btn-secondary","m-1");
     }
 }
 
-
-
-// function weatherCards(){
-//     let header = document.createElement(" div ")
-//     header.textContent = 
-// }
-
 renderHistoryBtn();
 
+function isValidCityName(cityName){
+    if (!cityName || cityName.length < 2 || cityName.length > 100){
+        return false;
+    }
+
+    const allowedCharactersPattern = /^[a-zA-Z\s\-']+$/;
+    if (!allowedCharactersPattern.test(cityName)){
+        return false;
+    }
+
+    if (" -'".includes(cityName[0]) || " -'".includes(cityName[cityName.length - 1])){
+        return false;
+    }
+
+    const consecutiveCharactersPattern = /[ \-']{2,}/;
+    if (consecutiveCharactersPattern.test(cityName)){
+        return false;
+    }
+
+    return true;
+}
 
