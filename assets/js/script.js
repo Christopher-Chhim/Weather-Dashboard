@@ -46,7 +46,7 @@ function saveHistory(cityHistory){
 }
 
 function currentWeather(cityName){
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`)
     .then((res)=> {
         return res.json()
     })
@@ -63,7 +63,7 @@ function currentWeather(cityName){
 }
 
 function getWeather(lat, lon){
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`)
     .then((res)=> {
         return res.json()
     })
